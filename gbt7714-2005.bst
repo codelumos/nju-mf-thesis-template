@@ -3,10 +3,10 @@
 %  符合 GB/T 7714-2005 规范的 BibTeX 样式文件
 %
 %  作者：    胡海星   南京大学计算机科学与技术系
-%  版本：    v2.1.1  2015年6月15日
-%  项目主页: http://haixing-hu.github.io/nju-thesis/
+%  版本：    v2.1.2  2022年5月27日
+%  项目主页： https://haixing-hu.github.io/nju-thesis/
 %
-%  参考资料:
+%  参考资料：
 %  [1] 中国国家标准化管理委员会. GB/T 7714-2005 文后参考文献着录规则[S]. 2005.
 %  [2] PATASHNIK O. BiBTeXing[R/OL]. 1988[2013-08-27].
 %      ftp://tug.ctan.org/pub/tex-archive/biblio/bibtex/contrib/doc/btxdoc.pdf
@@ -111,7 +111,7 @@ FUNCTION {cap.et.al.en} 		{", et~al"}
 FUNCTION {cap.et.al.zh} 		{", 等"}
 FUNCTION {cap.translate.en} 	{"~trans"}
 FUNCTION {cap.translate.zh} 	{"译"}
-FUNCTION {cap.doi.url} 			{"http://dx.doi.org/"}
+FUNCTION {cap.doi.url} 			{"https://dx.doi.org/"}
 FUNCTION {cap.st.en} 			{"st"}
 FUNCTION {cap.nd.en} 			{"nd"}
 FUNCTION {cap.rd.en} 			{"rd"}
@@ -1492,7 +1492,7 @@ FUNCTION {phdthesis} {                            % void Entry::phdthesis() {
                                                   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                                                   %
-FUNCTION {masterthesis} {                         % void Entry::masterthesis() {
+FUNCTION {mastersthesis} {                        % void Entry::mastersthesis() {
   "D" set.mark                                    %   set_mark("D");
   thesis.impl                                     %   thesis_impl();
 }                                                 % }
