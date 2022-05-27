@@ -1,15 +1,16 @@
 \chapter{图形}
 
 \section{基本图形}
-相对于表格而言，LaTeX中的图形就简单多了，需要注意的是本模板推荐将所有图形都转化为pdf，具体内容参见图~\ref{fig_errorExpCH4}。
+相对于表格而言，LaTeX中的图形就简单多了，需要注意的是本模板推荐将所有图形都转化为pdf，具体内容参见图~\ref{fig:errorExpCH4}。
 该图形放在本模板的本地文件夹figure中。
-图~\ref{fig_errorExpCH4}是将Excel的五个子图形排布在一个ppt页面上，之后保存为pdf文件，最终得到的图形可以保证是矢量图。
+图~\ref{fig:errorExpCH4}是将Excel的五个子图形排布在一个ppt页面上，之后保存为pdf文件，最终得到的图形可以保证是矢量图。
 
 
 \begin{figure}[htb]
   \centering
   \includegraphics[width=5in]{figure/chapter4/errorExpCH4.pdf}
-  \caption{以含错误的RTM为输入的五个系统上三个实验（Call，Data，Call+Data）的错误率（Incorrectness）}\label{fig_errorExpCH4}
+  \caption{以含错误的RTM为输入的五个系统上三个实验（Call，Data，Call+Data）的错误率（Incorrectness）}
+  \label{fig:errorExpCH4}
 \end{figure}
 
 \textbf{注意：不要删除项目下面的njulogo、njuname和reviewPlaceholder这三个文件，分别是论文封面的校徽、手写体南大校名以及盲审时的空白占位符。}
@@ -19,11 +20,12 @@
 \begin{figure}[htb]
   \centering
   \includegraphics[width=\linewidth]{figure/chapter4/VoDCodeSample.pdf}
-  \caption{VoD系统中的代码片段}\label{fig_VoDCodeSample}
+  \caption{VoD系统中的代码片段}
+  \label{fig:VoDCodeSample}
 \end{figure}
 
 这里给出一个代码引用的推荐实践。
-引用代码时先将代码放入word的文本框中，调整结束后，将该文本框页面另存为pdf文件，之后再作为图形来引用，如图~\ref{fig_VoDCodeSample}所示。
+引用代码时先将代码放入word的文本框中，调整结束后，将该文本框页面另存为pdf文件，之后再作为图形来引用，如图~\ref{fig:VoDCodeSample}所示。
 
 \section{其它图引用}
 
@@ -32,10 +34,10 @@
 一行一图，如图\ref{fig:line}。
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.7\textwidth]{figure/line.png} % requires the graphicx package
+	\includegraphics[width=0.7\textwidth]{figure/chapter4/line.png} % requires the graphicx package
 	\caption{待分行文本}
 	\label{fig:line}
-	%\vspace{0.8cm} % 用来调整和下方文字的间距
+	% \vspace{0.8cm} % 用来调整和下方文字的间距
 \end{figure}
 
 
@@ -44,12 +46,12 @@
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[width=0.9\textwidth]{figure/lstm1.png}
+		\includegraphics[width=0.9\textwidth]{figure/chapter4/lstm1.png}
 		\caption{长短时记忆单元模块}
 	\end{subfigure}
 	\begin{subfigure}{.4\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{figure/lstm2.png}
+		\includegraphics[width=0.8\textwidth]{figure/chapter4/lstm2.png}
 		\caption{深双向长短时记忆}
 		\label{fig:lstm2}
 	\end{subfigure}
@@ -66,13 +68,13 @@
 	\centering
 	\begin{subfigure}{.69\textwidth}
 		\centering
-		\includegraphics[width=1.0\textwidth]{figure/line1.png}
+		\includegraphics[width=1.0\textwidth]{figure/chapter4/line1.png}
 		\caption{全局损失切割第一行}
 		\label{fig:line1}
 	\end{subfigure}
 	\begin{subfigure}{.3\textwidth}
 		\centering
-		\includegraphics[width=1.0\textwidth]{figure/line2.png}
+		\includegraphics[width=1.0\textwidth]{figure/chapter4/line2.png}
 		\caption{局部损失切割第一行}
 		\label{fig:line2}
 	\end{subfigure}
@@ -80,20 +82,20 @@
 	
 	\begin{subfigure}{.49\textwidth}
 		\centering
-		\includegraphics[width=0.5\textwidth]{figure/line1.png}
+		\includegraphics[width=0.5\textwidth]{figure/chapter4/line1.png}
 		\caption{全局损失切割第二行}
-		\label{fig:line1}
+		\label{fig:line3}
 	\end{subfigure}
 	\begin{subfigure}{.49\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{figure/line2.png}
+		\includegraphics[width=0.8\textwidth]{figure/chapter4/line2.png}
 		\caption{局部损失切割第二行}
-		\label{fig:line2}
+		\label{fig:line4}
 	\end{subfigure}
 	\caption{分行结果比较。（a）全局损失切割；（b）局部损失切割；（c）缩放的全局损失切割；（d）缩放的局部损失切割}
 	\label{fig:multi}
 \end{figure}
 
-\newpage %为了将图片实例放在一起，另起一页，使用时请删掉
+\newpage % 为了将图片实例放在一起，另起一页，使用时请删掉
 
 

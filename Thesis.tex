@@ -2,49 +2,48 @@
 %# -*- coding:utf-8 -*-
 
 %% 南京大学学位论文的示例文档
-%% 作者：njuhan: https://github.com/njuHan
-%% 源模版repo: https://github.com/njuHan/njuthesis-nju-thesis-template
+%% 作者：codelumos: https://github.com/codelumos
+%% 模版repo：https://github.com/codelumos/nju-software-mf-thesis-template
 
 \documentclass[winfonts,master,twoside]{njuthesis}
-%% 审阅模式很重要，命令是下方使用的/blind
+%% 审阅模式很重要，命令是下方使用的\blind
 %% njuthesis 文档类的可选参数有：
-%%   winfonts, linuxfonts, macfonts, adobefonts winfonts 选项使得文档使用Windows 系统提供的字体；linuxfonts 选项使得文档使用Linux 系统提供的字体；macfonts 选项使得文档使用Mac 系统提供的字体；adobefonts 选项使得文档使用Adobe提供的OTF中文字体(需自行下载安转)
+%%   winfonts, linuxfonts, macfonts, adobefonts winfonts 选项使得文档使用 Windows 系统提供的字体；linuxfonts 选项使得文档使用 Linux 系统提供的字体；macfonts 选项使得文档使用 Mac 系统提供的字体；adobefonts 选项使得文档使用 Adobe 提供的 OTF 中文字体（需自行下载安转）
 %%   phd/master/bachelor 选择博士/硕士/学士论文
-%%   twoside 或 oneside 指定排版的文档为双面打印或单面打印格式（twoside会使得chapter 章节从奇数页开始，即纸张的正面开始，因此会出现一些空白的页面）
+%%   twoside 或 oneside 指定排版的文档为双面打印或单面打印格式（twoside 会使得 chapter 章节从奇数页开始，即纸张的正面开始，因此会出现一些空白的页面）
 %%   nobackinfo 取消封二页导师签名信息。注意，按照南大的规定，是需要签名页的。
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% set up labelformat and labelsep for subfigure 详见： http://www.latexstudio.net/archives/8652.html
+% 格式化图表标题和子标题，详见：https://www.latexstudio.net/archives/8652.html
 \captionsetup[subfigure]{labelformat=simple, labelsep=space}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 设置《国家图书馆封面》的内容，仅博士论文才需要填写
 
 % 设置论文按照《中国图书资料分类法》的分类编号
-%\classification{0175.2}
-% 设置论文按照《国际十进分类法UDC》的分类编号
-% 该编号可在下述网址查询：http://www.udcc.org/udcsummary/php/index.php?lang=chi
-%\udc{004.72}
+% \classification{0175.2}
+% 该编号可在下述网址查询：https://udcsummary.info/php/index.php?lang=chi
+% \udc{004.72}
 % 国家图书馆封面上的论文标题第一行，不可换行。此属性可选，默认值为通过\title设置的标题。
-%\nlctitlea{论文标题第一行}
+% \nlctitlea{论文标题第一行}
 % 国家图书馆封面上的论文标题第二行，不可换行。此属性可选，默认值为空白。
-%\nlctitleb{论文标题第二行}
+% \nlctitleb{论文标题第二行}
 % 国家图书馆封面上的论文标题第三行，不可换行。此属性可选，默认值为空白。
-%\nlctitlec{}
+% \nlctitlec{论文标题第三行}
 % 导师的单位名称及地址
-%\supervisorinfo{南京大学计算机科学与技术系~~南京市汉口路22号~~210093}
+% \supervisorinfo{南京大学软件学院~~南京市汉口路22号~~210093}
 % 答辩委员会主席
-%\chairman{张三丰~~教授}
+% \chairman{某某~~教授}
 % 第一位评阅人
-%\reviewera{阳顶天~~教授}
+% \reviewera{某某~~教授}
 % 第二位评阅人
-%\reviewerb{张无忌~~副教授}
+% \reviewerb{某某~~副教授}
 % 第三位评阅人
-%\reviewerc{黄裳~~教授}
+% \reviewerc{某某~~教授}
 % 第四位评阅人
-%\reviewerd{郭靖~~研究员}
+% \reviewerd{某某~~研究员}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -53,28 +52,28 @@
 % 单行论文标题，不可换行
 \title{南京大学毕业论文\LaTeX 模板}
 
-% 如果论文标题过长，可以分两行，第一行用\titlea{}定义，第二行用\titleb{}定义，
+% 如果论文标题过长，可以分两行，第一行用\titlea{}定义，第二行用\titleb{}定义
 % 使用以下3行：
-%\title{} %用于覆盖单行标题内容为空
-%\titlea{长标题第一行}  %第一行标题写这里
-%\titleb{长标题第二行用于长标题换行} %第二行标题写这里
-% 注意： \title 不能都注释，它用于控制标题选择双行还是单行。\title{}如果内容为空，则编译\titlea{},titleb{}双行标题，否则编译单行标题
+% \title{} % 用于覆盖单行标题内容为空
+% \titlea{长标题第一行}  % 第一行标题写这里
+% \titleb{长标题第二行用于长标题换行} % 第二行标题写这里
+% 注意：\title 不能都注释，它用于控制标题选择双行还是单行。\title{}如果内容为空，则编译\titlea{}，\titleb{}双行标题，否则编译单行标题
 
 
 % 论文作者姓名
 \author{作者}
 % 论文作者联系电话
-\telphone{xxxx}
+\telphone{13012345678}
 % 论文作者电子邮件地址
-\email{sample@smail.nju.edu.cn}
+\email{author@smail.nju.edu.cn}
 % 论文作者学生证号
-\studentnum{xxxxxxx}
-% 论文作者入学年份（年级）
-\grade{2019}
+\studentnum{MF20320000}
+% 论文作者入学年份（级）
+\grade{2020}
 % 论文作者毕业年份（届）, 出版授权书的学位年度
-\graduateyear{20xx}
+\graduateyear{2022}
 % 导师姓名职称
-\supervisor{某~~教授，某某~~教授}
+\supervisor{某某~~教授，某某~~教授}
 % 导师的联系电话
 \supervisortelphone{}
 % 论文作者的学科与专业方向
@@ -83,62 +82,62 @@
 \researchfield{软件工程}
 % 论文作者所在院系的中文名称
 \department{软件学院}
-% 论文作者所在学校或机构的名称。此属性可选，默认值为``南京大学''。
+% 论文作者所在学校或机构的名称。此属性可选，默认值为“南京大学”。
 \institute{南京大学}
 % 论文的提交日期，需设置年、月、日。
-\submitdate{xxxx年 xx 月 xx 日}
+\submitdate{2022年5月20日}
 % 论文的答辩日期，需设置年、月、日。
-\defenddate{xxxx年 xx 月 xx 日}
+\defenddate{2022年5月20日}
 % 论文的定稿日期，需设置年、月、日。
 % 此属性可选，若注释\date{}，则默认值为最后一次编译时的日期，精确到日。
-% \date{2019年5月20日}
+% \date{2022年5月20日}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 设置论文的英文封面
 
 % 论文的英文标题，不可换行
-\englishtitle{\LaTeX \;  NJU thesis template}
+\englishtitle{\LaTeX \;  NJU Thesis Template}
 % 论文作者姓名的拼音
 \englishauthor{Author}
 % 导师姓名职称的英文
-\englishsupervisor{ Professor Alex, Professor Bob}
+\englishsupervisor{Professor Alex, Professor Bob}
 % 论文作者学科与专业的英文名
 \englishmajor{Software Engineering}
 % 论文作者所在院系的英文名称
 \englishdepartment{Software Institute}
-% 论文作者所在学校或机构的英文名称。此属性可选，默认值为``Nanjing University''。
+% 论文作者所在学校或机构的英文名称。此属性可选，默认值为“Nanjing University”。
 \englishinstitute{Nanjing University}
 % 论文完成日期的英文形式，它将出现在英文封面下方。需设置年、月、日。日期格式使用美国的日期
-% 格式，即``Month day, year''，其中``Month''为月份的英文名全称，首字母大写；``day''为
-% 该月中日期的阿拉伯数字表示；``year''为年份的四位阿拉伯数字表示。
+% 格式，即“Month day, year”，其中“Month”为月份的英文名全称，首字母大写；“day”为
+% 该月中日期的阿拉伯数字表示；“year”为年份的四位阿拉伯数字表示。
 % 此属性可选，若注释掉\englishdate{}，则默认值为最后一次编译时的日期。
-% \englishdate{May 20, 2019}
+% \englishdate{May 20, 2022}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 设置论文的中文摘要
 
 % 设置中文摘要页面的论文标题及副标题的第一行。
 % 此属性可选，其默认值为使用|\title|命令所设置的论文标题
-%\abstracttitlea{标题第一行}
+% \abstracttitlea{标题第一行}
 % 设置中文摘要页面的论文标题及副标题的第二行。
 % 此属性可选，其默认值为空白
-%\abstracttitleb{标题第二行用于长标题换行}
+% \abstracttitleb{标题第二行用于长标题换行}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 设置论文的英文摘要
 
 % 设置英文摘要页面的论文标题及副标题的第一行。
 % 此属性可选，其默认值为使用|\englishtitle|命令所设置的论文标题
-%\englishabstracttitlea{englishabstracttitlea}
+% \englishabstracttitlea{englishabstracttitlea}
 % 设置英文摘要页面的论文标题及副标题的第二行。
 % 此属性可选，其默认值为空白
-%\englishabstracttitleb{nglishabstracttitleb}
+% \englishabstracttitleb{nglishabstracttitleb}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 盲审命令，空白字段设置请看 .cls文件 \newcommand*{\blind}
 %% 此外，请按照盲审要求自行去掉个人简历、致谢等页面中的个人信息
 %%**********************！！！非常重要的盲审命令，送审前必选！！！****************
-%\blind
+% \blind
 %%**********************！！！非常重要的盲审命令，送审前必选！！！****************
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -147,7 +146,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % 制作国家图书馆封面（博士学位论文才需要）
-%\makenlctitle
+% \makenlctitle
 % 制作中文封面
 \maketitle
 % 制作英文封面
@@ -168,7 +167,7 @@
 		\item 本模板参考了多份出自于自计算机系Haixing Hu提供的基于XeLaTeX编译的本科LaTeX模板。感谢之前各位同学和老师的贡献！
 		\item 本模板已由学院内多位老师指正，确保满足毕业论文要求，使用过程中如发现模板存在的问题请及时反馈到khy@nju.edu.cn。
 		\item 本模板内的文字内容与使用指南由软件学院的匡宏宇完成，改编自学院之前为研究生提供的硕士毕业论文模板，保留了各个参考模板提供的一些表格、图形和算法例子。输出的pdf文件内的内容均可以在tex文件中找到对应，尽可能地方便各位同学改编使用。
-		\item 推荐使用TeXLive作为编译器（类似于JDK），TeXStudio作为编辑器（类似于Eclipse），二者均为开源软件且支持三大主流操作系统。环境安装与配置请参考这条知乎专栏 \footnote{\url{https://zhuanlan.zhihu.com/p/80603542}}。注意，在sample.tex文件开头有针对不同环境的字库选项，一定要选择适合自己操作系统的字体，默认为Windows。
+		\item 推荐使用TeXLive作为编译器（类似于JDK），TeXStudio作为编辑器（类似于Eclipse），二者均为开源软件且支持三大主流操作系统。环境安装与配置请参考这条知乎专栏 \footnote{\url{https://zhuanlan.zhihu.com/p/80603542}}。注意，在Thesis.tex文件开头有针对不同环境的字库选项，一定要选择适合自己操作系统的字体，默认为Windows。
 		\item  出于严谨性的考量，本模板与使用指南目前仅对学院专业硕士开放（学硕如果要使用需要略作修改，可邮件联系我），请大家不要外传。
 	\end{itemize}
 	
@@ -179,8 +178,8 @@
 		\item LaTeX已经非常成熟，通过搜索引擎可以解决绝大部分问题，模板内也提供了丰富的样例和额外的手册供参考。
 		\item 每位同学可以选择自己搭建编译器与编辑器的组合，但如果不了解LaTeX的话建议还是使用推荐配置。
 	\end{enumerate}
-	% 同时应该注意到，空白页是故意留白，以便章节开头能够出现在偶数页。
-	% 中文关键词。关键词之间用中文全角分号隔开，末尾无标点符号。
+	% 同时应该注意到，空白页是故意留白，以便章节开头能够出现在偶数页
+	% 中文关键词，关键词之间用中文全角分号隔开，末尾无标点符号
 	\keywords{手写中文；文本识别；深度学习}
 \end{abstract}
 
@@ -190,41 +189,41 @@
 	The official sites of tools mentioned in this template:
 	
 	\begin{itemize}
-		\item TeXLive: \url{https://tug.org/texlive}
-		\item TeXStudio: \url{https://texstudio.sourceforge.net}
-		\item SumatraPDF: \url{https://sumatra-pdf.en.softonic.com}
-	\end{itemize} 
-	
+		\item TeXLive: \url{https://tug.org/texlive/}
+		\item TeXStudio: \url{https://www.texstudio.org/}
+		\item SumatraPDF: \url{https://www.sumatrapdfreader.org/}
+	\end{itemize}
+
 	The guidelines of how to install these tools can be found in corresponded sections of this template.
-	% 英文关键词。关键词之间用英文半角逗号隔开，末尾无符号。
+	% 英文关键词，关键词之间用英文半角逗号隔开，末尾无符号
 	\englishkeywords{Handwritten Chinese, Text recognition, Deep learning}
 \end{englishabstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 论文的前言，应放在目录之前，中英文摘要之后，一般不需要
 %
-%\begin{preface}
+% \begin{preface}
 %
-%在过去的40年中，手写中文文本领域识别（HCTR）取得了很大的进展[1,2]。
+% 在过去的40年中，手写中文文本领域识别（HCTR）取得了很大的进展[1,2]。
 %
-%\vspace{1cm}
-%\begin{flushright}
-%饶安逸\\
-%2018年5月15日于南大仙林
-%\end{flushright}
+% \vspace{1cm}
+% \begin{flushright}
+% 某某某\\
+% 2022年5月20日于南大鼓楼
+% \end{flushright}
 %
-%\end{preface}
+% \end{preface}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 生成论文目录
 \tableofcontents
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 生成插图清单。如无需插图清单则可注释掉下述语句。
+% 生成插图清单，如无需插图清单则可注释掉下述语句
 \listoffigures
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 生成附表清单。如无需附表清单则可注释掉下述语句。
+% 生成附表清单，如无需附表清单则可注释掉下述语句
 \listoftables
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -234,19 +233,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 学位论文的正文应以《绪论》作为第一章，本模板是按照自身功能模块组织的，并非论文中的章节安排
 
-\input{chapter/Title.tex}
+\input{chapter/Chapter1_Title.tex}
 
-\input{chapter/MainBody.tex}
+\input{chapter/Chapter2_MainBody.tex}
 
-\input{chapter/Table.tex}
+\input{chapter/Chapter3_Table.tex}
 
-\input{chapter/Figure.tex}
+\input{chapter/Chapter4_Figure.tex}
 
-\input{chapter/Formula.tex}
+\input{chapter/Chapter5_Formula.tex}
 
-\input{chapter/Algorithm.tex}
+\input{chapter/Chapter6_Algorithm.tex}
 
-\input{chapter/Reference.tex}
+\input{chapter/Chapter7_Reference.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 致谢，应放在结论之后
@@ -257,10 +256,10 @@
 
 
 
-% 参考文献。应放在\backmatter之前。
-% 推荐使用BibTeX，若不使用BibTeX时注释掉下面一句。
-%\nocite{*}
-\bibliography{sample}
+% 参考文献，应放在\backmatter之前
+% 推荐使用BibTeX，若不使用BibTeX时注释掉下面一句
+% \nocite{*}
+\bibliography{references}
 
 
 % 附录，必须放在参考文献后，backmatter前
@@ -280,35 +279,34 @@ int main()
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 作者简历与科研成果页，应放在backmatter之后
 \begin{resume}
-% 论文作者身份简介，一句话即可。
+% 论文作者身份简介，一句话即可
 \begin{authorinfo}
-\noindent 韦小宝，男，汉族，1985年11月出生，江苏省扬州人。
+\noindent 某某某，男，汉族，1997年11月出生，江苏省泰州人。
 \end{authorinfo}
-% 论文作者教育经历列表，按日期从近到远排列，不包括将要申请的学位。
+% 论文作者教育经历列表，按日期从近到远排列，不包括将要申请的学位
 \begin{education}
-\item[2007年9月 --- 2010年6月] 南京大学计算机科学与技术系 \hfill 硕士
-\item[2003年9月 --- 2007年6月] 南京大学计算机科学与技术系 \hfill 本科
+\item[2016年9月 --- 2020年6月] 南京大学软件学院 \hfill 本科
 \end{education}
-% 论文作者在攻读学位期间所发表的文章的列表，按发表日期从近到远排列。
+% 论文作者在攻读学位期间所发表的文章的列表，按发表日期从近到远排列
 \begin{publications}
-\item Xiaobao Wei, Jinnan Chen, ``Voting-on-Grid Clustering for Secure
-  Localization in Wireless Sensor Networks,'' in \textsl{Proc. IEEE International
-    Conference on Communications (ICC) 2010}, May. 2010.
-\item Xiaobao Wei, Shiba Mao, Jinnan Chen, ``Protecting Source Location Privacy
-  in Wireless Sensor Networks with Data Aggregation,'' in \textsl{Proc. 6th
+\item XXX, XXX, “Voting-on-Grid Clustering for Secure
+  Localization in Wireless Sensor Networks,” in \textsl{Proc. IEEE International
+    Conference on Communications (ICC) 2020}, May. 2020.
+\item XXX, XXX, XXX, “Protecting Source Location Privacy
+  in Wireless Sensor Networks with Data Aggregation,” in \textsl{Proc. 6th
     International Conference on Ubiquitous Intelligence and Computing (UIC)
-    2009}, Oct. 2009.
+    2019}, Oct. 2019.
 \end{publications}
-% 论文作者在攻读学位期间参与的科研课题的列表，按照日期从近到远排列。
+% 论文作者在攻读学位期间参与的科研课题的列表，按照日期从近到远排列
 \begin{projects}
-\item 国家自然科学基金面上项目``问题研究''
-（课题年限~2010年1月 --- 2012年12月），负责相关问题的研究。
+\item 国家自然科学基金面上项目“问题研究”
+（课题年限~2020年1月 --- 2022年12月），负责相关问题的研究。
 \end{projects}
 \end{resume}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 生成《学位论文出版授权书》页面，应放在最后一页
-%\makelicense
+% \makelicense
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
