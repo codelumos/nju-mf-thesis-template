@@ -825,31 +825,31 @@
 }
 \newcommand*{\njut@covertable@onelinetitle}{
   \begin{tabular}{p{7.3em}c}
-      \makebox[7em][s]{\njut@cap@cover@title}
+      \bfseries\makebox[7em][s]{\njut@cap@cover@title}
       & \njutunderline[310pt]{\njut@value@title}\\
-      \makebox[7em][s]{\njut@cap@cover@author}
+      \bfseries\makebox[7em][s]{\njut@cap@cover@author}
       & \njutunderline[310pt]{\njut@value@author}\\
-      \makebox[7em][s]{\scalebox{0.72}[1]{\njut@cap@cover@major}}
+      \bfseries\makebox[7em][s]{\scalebox{0.72}[1]{\njut@cap@cover@major}}
       & \njutunderline[310pt]{\njut@value@major}\\
-      \makebox[7em][s]{\njut@cap@cover@researchfield}
+      \bfseries\makebox[7em][s]{\njut@cap@cover@researchfield}
       & \njutunderline[310pt]{\njut@value@researchfield}\\
-      \makebox[7em][s]{\njut@cap@cover@supervisor}
+      \bfseries\makebox[7em][s]{\njut@cap@cover@supervisor}
       & \njutunderline[310pt]{\njut@value@supervisor}\\
   \end{tabular}
 }
 \newcommand*{\njut@covertable@twolinetitle}{
   \begin{tabular}{p{7.3em}c}
-      \makebox[7em][s]{\njut@cap@cover@title}
+      \bfseries\makebox[7em][s]{\njut@cap@cover@title}
       & \njutunderline[310pt]{\njut@value@titlea}\\
-      \makebox[7em][s]{}
+      \bfseries\makebox[7em][s]{}
       & \njutunderline[310pt]{\njut@value@titleb}\\
-      \makebox[7em][s]{\njut@cap@cover@author}
+      \bfseries\makebox[7em][s]{\njut@cap@cover@author}
       & \njutunderline[310pt]{\njut@value@author}\\
-      \makebox[7em][s]{\scalebox{0.72}[1]{\njut@cap@cover@major}}
+      \bfseries\makebox[7em][s]{\scalebox{0.72}[1]{\njut@cap@cover@major}}
       & \njutunderline[310pt]{\njut@value@major}\\
-      \makebox[7em][s]{\njut@cap@cover@researchfield}
+      \bfseries\makebox[7em][s]{\njut@cap@cover@researchfield}
       & \njutunderline[310pt]{\njut@value@researchfield}\\
-      \makebox[7em][s]{\njut@cap@cover@supervisor}
+      \bfseries\makebox[7em][s]{\njut@cap@cover@supervisor}
       & \njutunderline[310pt]{\njut@value@supervisor}\\
   \end{tabular}
 }
@@ -867,7 +867,7 @@
     {\bf\kaishu\zihao{1}（\makebox[9em][s]{\njut@cap@cover@apply}）}\\
     \vskip\stretch{1}
     {\bgroup
-    \bfseries\kaishu\zihao{3} % 中文封面字号
+    \kaishu\zihao{3} % 中文封面字号
     \def\tabcolsep{1pt}
     \def\arraystretch{1.5}
 	\ifdefempty{\njut@value@title}{\njut@covertable@twolinetitle}{\njut@covertable@onelinetitle}
