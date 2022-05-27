@@ -1,7 +1,7 @@
 %% 模板类文件
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{njuthesis.cls}
- [2015/7/16 v1.1.18 Document Class for the Degree Papers of Nanjing University]
+ [2022/5/27 v1.1.19 Document Class for the Degree Thesis of Nanjing University]
 \newif\ifnjut@adobefonts\njut@adobefontstrue
 \newif\ifnjut@winfonts\njut@winfontsfalse
 \newif\ifnjut@linuxfonts\njut@linuxfontsfalse
@@ -48,7 +48,7 @@
 \DeclareGraphicsExtensions{.pdf,.eps,.jpg,.png}
 \RequirePackage{caption}
 \RequirePackage{float}
-%% \RequirePackage{subfig} %% 有bug暂时用不了subfig, 用subcaption代替
+% \RequirePackage{subfig} % 有bug暂时用不了subfig, 用subcaption代替
 \RequirePackage{subcaption}
 \RequirePackage{array}
 \RequirePackage{longtable}
@@ -65,7 +65,7 @@
 \RequirePackage{amsfonts}
 \RequirePackage{amssymb}
 \RequirePackage{bm}
-%%\RequirePackage{mathrsfs}
+% \RequirePackage{mathrsfs}
 \RequirePackage{wasysym}
 \RequirePackage{pifont}
 \RequirePackage{txfonts}
@@ -79,8 +79,8 @@
 \defaultfontfeatures{Mapping=tex-text}
 \punctstyle{plain}
 \RequirePackage{ulem}
-%\RequirePackage{CJKfntef}
-%\renewcommand{\CJKunderlinecolor}{\color{black}}
+% \RequirePackage{CJKfntef}
+% \renewcommand{\CJKunderlinecolor}{\color{black}}
 \RequirePackage{xeCJKfntef}
 \xeCJKsetup{ underline/format = \color{black} }
 \RequirePackage[hyphens]{url}
@@ -347,15 +347,15 @@
 \renewcommand*{\theequation}{\dashnumber{\thechapter}{\arabic{equation}}}
 \renewcommand*{\thesubfigure}{(\alph{subfigure})}
 \renewcommand*{\thesubtable}{(\alph{subtable})}
-\newtheoremstyle{plain}% name
-                {1em}%      Space above, empty = `usual value'
-                {1em}%      Space below
-                {\normalfont}% Body font
-                {}%         Indent amount
+\newtheoremstyle{plain}               % name
+                {1em}                 % Space above, empty = `usual value'
+                {1em}                 % Space below
+                {\normalfont}         % Body font
+                {}                    % Indent amount
                 {\normalfont\bfseries}% Thm head font
-                {}%         Punctuation after thm head
-                {1em}%      Space after thm head: \newline = linebreak
-                {}%         Thm head spec
+                {}                    % Punctuation after thm head
+                {1em}                 % Space after thm head: \newline = linebreak
+                {}                    % Thm head spec
 \newtheorem{definition}{\njut@cap@definition}[chapter]
 \newtheorem{notation}[definition]{\njut@cap@notation}
 \newtheorem{theorem}{\njut@cap@theorem}[chapter]
@@ -387,8 +387,8 @@
   \item[\hskip\labelsep\textbf{#1}\@addpunct{:}]\ignorespaces
 }{\endtrivlist\@endpefalse}
 
-\newtheorem{algorithm}{\njut@cap@algorithm}[chapter] %算法标号使用章节号，否则注释该行即可
-%algorithm seudocode
+\newtheorem{algorithm}{\njut@cap@algorithm}[chapter] % 算法标号使用章节号，否则注释该行即可
+% algorithm seudocode
 \RequirePackage{algorithm}
 \RequirePackage{algorithmic}
 \renewcommand{\algorithmicrequire}{ \textbf{输入:}}
@@ -525,10 +525,10 @@
   labelsep=0.5em,           % 包含标签的盒子与列表项的第一行文本之间的间隔
   labelwidth=2em,           % 包含标签的盒子的正常宽度；若实际宽度更宽，则使用实际宽度。
 }
-%\setlist[itemize,1]{label=$\medbullet$}
-%\setlist[itemize,2]{label=$\blacksquare$}
-%\setlist[itemize,3]{label=$\Diamondblack$}
-%较小的一级 item 点
+% \setlist[itemize,1]{label=$\medbullet$}
+% \setlist[itemize,2]{label=$\blacksquare$}
+% \setlist[itemize,3]{label=$\Diamondblack$}
+% 较小的一级 item 点
 \setlist[itemize,1]{label=$\vcenter{\hbox{\large$\bullet$}}$} 
 \setlist[itemize,2]{label=$\vcenter{\hbox{\small$\blacksquare$}}$} 
 \setlist[itemize,3]{label=$\vcenter{\hbox{\small$\Diamondblack$}}$} 
@@ -658,7 +658,7 @@
        {\@latex@warning{Empty `thebibliography' environment}}%
       \endlist}
 \bibliographystyle{gbt7714-2005}
-%\setcitestyle{super,square}
+% \setcitestyle{super,square}
 \setcitestyle{square}
 \renewcommand\NAT@citesuper[3]{%
 \ifNAT@swa%
@@ -829,7 +829,7 @@
       & \njutunderline[310pt]{\njut@value@title}\\
       \makebox[7em][s]{\njut@cap@cover@author}
       & \njutunderline[310pt]{\njut@value@author}\\
-      \makebox[7em][s]{\njut@cap@cover@major}
+      \makebox[7em][s]{\scalebox{0.72}[1]{\njut@cap@cover@major}}
       & \njutunderline[310pt]{\njut@value@major}\\
       \makebox[7em][s]{\njut@cap@cover@researchfield}
       & \njutunderline[310pt]{\njut@value@researchfield}\\
@@ -845,7 +845,7 @@
       & \njutunderline[310pt]{\njut@value@titleb}\\
       \makebox[7em][s]{\njut@cap@cover@author}
       & \njutunderline[310pt]{\njut@value@author}\\
-      \makebox[7em][s]{\njut@cap@cover@major}
+      \makebox[7em][s]{\scalebox{0.72}[1]{\njut@cap@cover@major}}
       & \njutunderline[310pt]{\njut@value@major}\\
       \makebox[7em][s]{\njut@cap@cover@researchfield}
       & \njutunderline[310pt]{\njut@value@researchfield}\\
@@ -858,15 +858,16 @@
   \pdfbookmark[0]{\njut@cap@cover}{cover}
   \begin{center}
     \vskip 10mm
-    \includegraphics[width=1.96cm]{\njut@cap@institute@logo} \\
-    \includegraphics[height=2cm]{\njut@cap@institute@name} \\
-    \vskip 8mm
+    \includegraphics[width=1.6cm]{\njut@cap@institute@logo} \\
+    \vskip 5mm
+    \includegraphics[height=1.5cm]{\njut@cap@institute@name} \\
+    \vskip 3cm
     {\bf\kaishu\zihao{1}\makebox[10em][s]{\njut@cap@cover@thesis}}\\
     \vskip 5mm
     {\bf\kaishu\zihao{1}（\makebox[9em][s]{\njut@cap@cover@apply}）}\\
     \vskip\stretch{1}
     {\bgroup
-    \bfseries\kaishu\zihao{3} %中文封面字号
+    \bfseries\kaishu\zihao{3} % 中文封面字号
     \def\tabcolsep{1pt}
     \def\arraystretch{1.5}
 	\ifdefempty{\njut@value@title}{\njut@covertable@twolinetitle}{\njut@covertable@onelinetitle}
@@ -947,7 +948,7 @@
   \end{center}%
   \normalsize\par%
 }{%
-  %%\cleardoublepage
+  \cleardoublepage
   \clearpage
 }
 \newcommand{\keywords}[1]{%
@@ -985,7 +986,7 @@
   \end{center}%
   \normalsize\par%
 }{%
-  %%\cleardoublepage
+  \cleardoublepage
   \clearpage
 }
 \newcommand{\englishkeywords}[1]{%
@@ -1045,7 +1046,7 @@
   & \multicolumn{6}{c|}{\ifdefempty{\njut@value@title}{\njut@value@titlea\njut@value@titleb}{\njut@value@title}} \\
   \hline
   \cell{2.2cm}{1cm}{\njut@cap@license@studentnum}
-  & {\njut@value@studentnum}
+  & \cell{2cm}{1cm}{\njut@value@studentnum}
   & {\njut@cap@license@department}
   & \multicolumn{2}{c|}{%
     \cell{3.52cm}{1cm}{\njut@value@department}%
@@ -1131,7 +1132,7 @@
     {\bf\kaishu\zihao{1}（\makebox[9em][s]{\njut@cap@cover@apply}）}\\
     \vskip\stretch{1}
     {\bgroup
-    \bfseries\kaishu\zihao{3} %中文封面字号
+    \bfseries\kaishu\zihao{3} % 中文封面字号
     \def\tabcolsep{1pt}
     \def\arraystretch{1.5}
 	\ifdefempty{\njut@value@title}{\njut@covertable@twolinetitle}{\njut@covertable@onelinetitle}
@@ -1173,8 +1174,8 @@
     \vskip\stretch{2}
     \includegraphics[width=2.5cm]{\njut@cap@institute@holder} \\
     \vskip 3mm
-    %\normalfont\njut@value@en@department\\
-    %\njut@value@en@institute
+    % \normalfont\njut@value@en@department\\
+    % \njut@value@en@institute
     \vskip 30pt
     \normalfont\normalsize\njut@value@en@date
   \end{center}
