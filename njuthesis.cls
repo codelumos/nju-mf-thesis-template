@@ -1040,13 +1040,13 @@
 \newcommand*{\njut@license@maketable}{%
 \noindent\zihao{5}%
 \begin{tabular*}{\textwidth}
-    {|C{2.2cm}|C{2cm}|C{1.5cm}|C{2.1cm}|C{1.42cm}C{1.5cm}|C{1.25cm}|}
+    {|C{2cm}|C{2.2cm}|C{1.5cm}|C{2.1cm}|C{1.42cm}C{1.5cm}|C{1.25cm}|}
   \hline
-  \cell{2.2cm}{1cm}{\njut@cap@license@title}
+  \cell{2cm}{1cm}{\njut@cap@license@title}
   & \multicolumn{6}{c|}{\ifdefempty{\njut@value@title}{\njut@value@titlea\njut@value@titleb}{\njut@value@title}} \\
   \hline
-  \cell{2.2cm}{1cm}{\njut@cap@license@studentnum}
-  & \cell{2cm}{1cm}{\njut@value@studentnum}
+  \cell{2cm}{1cm}{\njut@cap@license@studentnum}
+  & {\njut@value@studentnum}
   & {\njut@cap@license@department}
   & \multicolumn{2}{c|}{%
     \cell{3.52cm}{1cm}{\njut@value@department}%
@@ -1054,7 +1054,7 @@
   & {\njut@cap@license@grade}
   & {\njut@value@graduateyear} \\
   \hline
-  \cell{2.2cm}{1.5cm}{\njut@cap@license@category}
+  \cell{2cm}{1.5cm}{\njut@cap@license@category}
   & \multicolumn{3}{c}{
     \begin{tabular*}{5.6cm}{p{2.8cm}p{2.8cm}}
        {{\zihao{4}$\Square$}}%
@@ -1070,10 +1070,10 @@
   & \multicolumn{3}{r|}{%
     \raisebox{-2em}{\njut@cap@license@categoryhint}}\\
   \hline
-  \cell{2.2cm}{1cm}{\njut@cap@license@email}
+  \cell{2cm}{1cm}{\njut@cap@license@email}
   & \multicolumn{6}{c|}{{\njut@value@email}}  \\
   \hline
-  \cell{2.2cm}{1cm}{\njut@cap@license@supervisorname}
+  \cell{2cm}{1cm}{\njut@cap@license@supervisorname}
   & \multicolumn{6}{c|}{{\njut@value@supervisor}}\\
   \hline
 \end{tabular*}
