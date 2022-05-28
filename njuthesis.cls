@@ -1040,23 +1040,21 @@
 \newcommand*{\njut@license@maketable}{%
 \noindent\zihao{5}%
 \begin{tabular*}{\textwidth}
-    {|C{2cm}|C{2.2cm}|C{1.5cm}|C{2.1cm}|C{1.42cm}C{1.5cm}|C{1.25cm}|}
+    {|C{2cm}|C{2.4cm}|C{1.7cm}|C{2.2cm}|C{1.7cm}|C{2cm}|}
   \hline
   \cell{2cm}{1cm}{\njut@cap@license@title}
-  & \multicolumn{6}{c|}{\ifdefempty{\njut@value@title}{\njut@value@titlea\njut@value@titleb}{\njut@value@title}} \\
+  & \multicolumn{5}{c|}{\ifdefempty{\njut@value@title}{\njut@value@titlea\njut@value@titleb}{\njut@value@title}} \\
   \hline
   \cell{2cm}{1cm}{\njut@cap@license@studentnum}
   & {\njut@value@studentnum}
   & {\njut@cap@license@department}
-  & \multicolumn{2}{c|}{%
-    \cell{3.52cm}{1cm}{\njut@value@department}%
-  }
+  & {\njut@value@department}
   & {\njut@cap@license@grade}
   & {\njut@value@graduateyear} \\
   \hline
   \cell{2cm}{1.5cm}{\njut@cap@license@category}
-  & \multicolumn{3}{c}{
-    \begin{tabular*}{5.6cm}{p{2.8cm}p{2.8cm}}
+  & \multicolumn{3}{l}{
+    \begin{tabular*}{5.6cm}{p{3.8cm}p{2.8cm}}
        {{\zihao{4}$\Square$}}%
        \njut@cap@license@categorymaster
       & {\zihao{4}$\Square$}%
@@ -1067,14 +1065,14 @@
        \njut@cap@license@categoryphdspec \\
 	  & 
     \end{tabular*}}
-  & \multicolumn{3}{r|}{%
+  & \multicolumn{2}{r|}{%
     \raisebox{-2em}{\njut@cap@license@categoryhint}}\\
   \hline
   \cell{2cm}{1cm}{\njut@cap@license@email}
-  & \multicolumn{6}{c|}{{\njut@value@email}}  \\
+  & \multicolumn{5}{c|}{{\njut@value@email}}  \\
   \hline
   \cell{2cm}{1cm}{\njut@cap@license@supervisorname}
-  & \multicolumn{6}{c|}{{\njut@value@supervisor}}\\
+  & \multicolumn{5}{c|}{{\njut@value@supervisor}}\\
   \hline
 \end{tabular*}
 }
@@ -1095,6 +1093,21 @@
   \njut@cap@datefield)\par
   \vspace{2em}
   \noindent\zihao{-4}\njut@cap@license@remark%
+  \normalfont
+  \cleardoublepage
+}
+\newcommand*{\njut@statement@makedeclaration}{%
+\par\zihao{-4}\njut@cap@statement@declaration
+\vspace{5mm}
+\begin{flushright}
+  \njut@cap@license@sign\njutunderline[3cm]{}\\
+  \njut@cap@datefield\\
+\end{flushright}%
+}
+\newcommand*{\statement}{%
+  \thispagestyle{empty}
+  \nchapter{\njut@cap@statement@chaptername}
+  \njut@statement@makedeclaration
   \normalfont
   \cleardoublepage
 }
