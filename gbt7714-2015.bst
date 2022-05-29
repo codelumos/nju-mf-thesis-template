@@ -1,17 +1,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %  符合 GB/T 7714-2005 规范的 BibTeX 样式文件
-%
-%  作者：    胡海星   南京大学计算机科学与技术系
-%  版本：    v2.1.2  2022年5月27日
-%  项目主页： https://haixing-hu.github.io/nju-thesis/
+%  版本: v2.2 2022年5月29日
 %
 %  参考资料：
-%  [1] 中国国家标准化管理委员会. GB/T 7714-2005 文后参考文献着录规则[S]. 2005.
-%  [2] PATASHNIK O. BiBTeXing[R/OL]. 1988[2013-08-27].
-%      ftp://tug.ctan.org/pub/tex-archive/biblio/bibtex/contrib/doc/btxdoc.pdf
-%  [3] PATASHNIK O. Designing BibTeX Styles[R/OL]. 1998[2013-08-27].
-%      ftp://tug.ctan.org/pub/tex-archive/biblio/bibtex/contrib/doc/btxhak.pdf
+%  [1] 中国国家标准化管理委员会. GB_T 7714-2015 信息与文献 参考文献著录规则[S]. 2015.
+%  [2] 胡海星. GBT7714-2005-BibTeX-Style[EB/OL]. (2018-10-09)[2022-05-29]. https://github.com/Haixing-Hu/GBT7714-2005-BibTeX-Style.
 %
 %    This program is free software; you can redistribute it and/or modify
 %    it under the terms of the GNU General Public License as published by
@@ -111,14 +105,14 @@ FUNCTION {cap.et.al.en} 		{", et~al"}
 FUNCTION {cap.et.al.zh} 		{", 等"}
 FUNCTION {cap.translate.en} 	{"~trans"}
 FUNCTION {cap.translate.zh} 	{"译"}
-FUNCTION {cap.doi.url} 			{"https://dx.doi.org/"}
+FUNCTION {cap.doi} 			    {"DOI:"}
 FUNCTION {cap.st.en} 			{"st"}
 FUNCTION {cap.nd.en} 			{"nd"}
 FUNCTION {cap.rd.en} 			{"rd"}
 FUNCTION {cap.th.en} 			{"th"}
 
-FUNCTION {cap.space}      {" "}
-FUNCTION {cap.period} 		{"\@. "}
+FUNCTION {cap.space} 			{" "}
+FUNCTION {cap.period}			{"\@. "}
 FUNCTION {cap.comma} 			{"\@, "}
 FUNCTION {cap.colon} 			{"\thinspace{}\textnormal{: }"}
 FUNCTION {cap.double.slash} 	{" //\thinspace{}"}
@@ -848,7 +842,7 @@ FUNCTION {format.citedate} {                      % String Emtry::format_citedat
                                                   % // since if the URL contains special symbols such
                                                   % // as '%', the \biburl{} will be broken.
 FUNCTION {format.url} {                           % String Emtry::format_url(String url) {
-  "\newline\url{" swap$ * "}" *                   %   return "\newline\url{" + url + "}";
+  "\url{" swap$ * "}" *                           %   return "\newline\url{" + url + "}";
 }                                                 % }
                                                   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1353,25 +1347,6 @@ FUNCTION {output.end.number} {                    % void Entry::output_end_numbe
                                                   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                                                   %
-FUNCTION {output.url.or.doi} {                    % void Entry::output_url_or_doi(int required) {
-  'required :=                                    %   this.required = required;
-  url empty$ not {                                %   if (! empty(this.url)) {
-    cap.period write$                             %     write(cap_period);
-    url format.url write$                         %     write(format_url(this.url));
-  } {                                             %   } else {
-    doi empty$ not {                              %     if (! empty(this.doi)) {
-      cap.period write$                           %       write(cap_period);
-      cap.doi.url doi * format.url write$         %       write(format_url(cap_doi_url + this.doi));
-    } {                                           %     } else {
-      required {                                  %       if (required == 1) {
-        "Require URL or DOI: " cite$ * warning$   %         warning("Require URL or DOI: " + this.cite);
-      } 'skip$ if$                                %       }
-    } if$                                         %     }
-  } if$                                           %   }
-}                                                 % }
-                                                  %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-                                                  %
 FUNCTION {output.url} {                           % void Entry::output_url(int required) {
   'required :=                                    %   this.required = required;
   url empty$ not {                                %   if (! empty(this.url)) {
@@ -1382,6 +1357,20 @@ FUNCTION {output.url} {                           % void Entry::output_url(int r
       "Require URL: " cite$ * warning$            %        warning("Require URL: " + this.cite);
     } 'skip$ if$                                  %     }
   } if$                                           %   }
+}                                                 % }
+                                                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                                  %
+FUNCTION {output.doi} {                           % void Entry::output_doi(int required) {
+  'required :=                                    %   this.required = required;
+  doi empty$ not {                                %     if (! empty(this.doi)) {
+    cap.period write$                             %       write(cap_period);
+    cap.doi doi write$                            %       write(cap_doi_url + this.doi);
+  } {                                             %     } else {
+    required {                                    %       if (required == 1) {
+      "Require DOI: " cite$ * warning$            %         warning("Require DOI: " + this.cite);
+    } 'skip$ if$                                  %       }
+  } if$                                           %     }
 }                                                 % }
                                                   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1417,7 +1406,8 @@ FUNCTION {book.impl} {                            % void Entry::book_impl() {
   true output.year                                %   output_year(true);
   false output.pages                              %   output_pages(false);
   false output.citedate                           %   output_citedate(false);
-  false output.url.or.doi                         %   output_url_or_doi(false);
+  false output.url                                %   output_url(false);
+  false output.doi                                %   output_doi(false);
   end.bibitem                                     %   end_bibitem();
 }                                                 % }
                                                   %
@@ -1455,7 +1445,8 @@ FUNCTION {proceedings} {                          % void Entry::proceedings() {
   true output.year                                %   output_year(true);
   false output.pages                              %   output_pages(false);
   false output.citedate                           %   output_citedate(false);
-  false output.url.or.doi                         %   output_url_or_doi(false);
+  false output.url                                %   output_url(false);
+  false output.doi                                %   output_doi(false);
   end.bibitem                                     %   end_bibitem();
 }                                                 % }
                                                   %
@@ -1479,7 +1470,8 @@ FUNCTION {thesis.impl} {                          % void Entry::thesis_impl() {
   true output.year                                %   output_year(true);
   false output.pages                              %   output_pages(false);
   false output.citedate                           %   output_citedate(false);
-  false output.url.or.doi                         %   output_url_or_doi(false);
+  false output.url                                %   output_url(false);
+  false output.doi                                %   output_doi(false);
   end.bibitem                                     %   end_bibitem();
 }                                                 % }
                                                   %
@@ -1526,7 +1518,8 @@ FUNCTION {techreport} {                           % void Entry::techreport() {
   true output.year                                %   output_year(true);
   false output.pages                              %   output_pages(false);
   false output.citedate                           %   output_citedate(false);
-  false output.url.or.doi                         %   output_url_or_doi(false);
+  false output.url                                %   output_url(false);
+  false output.doi                                %   output_doi(false);
   end.bibitem                                     %   end_bibitem();
 }                                                 % }
                                                   %
@@ -1550,7 +1543,8 @@ FUNCTION {standard} {                             % void Entry::standard() {
   true output.year                                %   output_year(true);
   false output.pages                              %   output_pages(false);
   false output.citedate                           %   output_citedate(false);
-  false output.url.or.doi                         %   output_url_or_doi(false);
+  false output.url                                %   output_url(false);
+  false output.doi                                %   output_doi(false);
   end.bibitem                                     %   end_bibitem();
 }                                                 % }
                                                   %
@@ -1574,7 +1568,8 @@ FUNCTION {reference} {                            % void Entry::reference() {
   true output.year                                %   output_year(true);
   false output.pages                              %   output_pages(false);
   false output.citedate                           %   output_citedate(false);
-  false output.url.or.doi                         %   output_url_or_doi(false);
+  false output.url                                %   output_url(false);
+  false output.doi                                %   output_doi(false);
   end.bibitem                                     %   end_bibitem();
 }                                                 % }
                                                   %
@@ -1614,7 +1609,8 @@ FUNCTION {periodical.impl} {                      % void Entry::periodical_impl(
     true output.end.year                          %     output_end_year(true);
   } 'skip$ if$                                    %   }
   false output.citedate                           %   output_citedate(false);
-  false output.url.or.doi                         %   output_url_or_doi(false);
+  false output.url                                %   output_url(false);
+  false output.doi                                %   output_doi(false);
   end.bibitem                                     %   end_bibitem();
 }                                                 % }
                                                   %
@@ -1645,7 +1641,8 @@ FUNCTION {patent} {                               % void Entry::patent() {
   cap.period write$                               %   write(cap_period);
   true output.date                                %   output_date(true);
   false output.citedate                           %   output_citedate(false);
-  false output.url.or.doi                         %   output_url_or_doi(false);
+  false output.url                                %   output_url(false);
+  false output.doi                                %   output_doi(false);
   end.bibitem                                     %   end_bibitem();
 }                                                 % }
                                                   %
@@ -1673,6 +1670,7 @@ FUNCTION {online} {                               % void Entry::online() {
   false output.modifydate                         %   output_modifydate(false);
   true output.citedate                            %   output_citedate(true);
   true output.url                                 %   output_url(true);
+  false output.doi                                %   output_doi(false);
   end.bibitem                                     %   end_bibitem();
 }                                                 % }
                                                   %
@@ -1698,7 +1696,8 @@ FUNCTION {program.impl} {                         % void Entry::program_impl() {
   } if$                                           %   }
   true output.year                                %   output_year(true);
   false output.citedate                           %   output_citedate(false);
-  false output.url.or.doi                         %   output_url_or_doi(false);
+  false output.url                                %   output_url(false);
+  false output.doi                                %   output_doi(false);
   end.bibitem                                     %   end_bibitem();
 }                                                 % }
                                                   %
@@ -1727,7 +1726,8 @@ FUNCTION {unpublished} {                          % void Entry::unpublished() {
   cap.period write$                               %   write(cap_period);
   true output.year                                %   output_year(true);
   false output.citedate                           %   output_citedate(false);
-  false output.url.or.doi                         %   output_url_or_doi(false);
+  false output.url                                %   output_url(false);
+  false output.doi                                %   output_doi(false);
   end.bibitem                                     %   end_bibitem();
 }                                                 % }
                                                   %
@@ -1759,7 +1759,8 @@ FUNCTION {inbook.impl} {                          % void Entry::inbook_impl() {
   true output.year                                %   output_year(true);
   false output.pages                              %   output_pages(false);
   false output.citedate                           %   output_citedate(false);
-  false output.url.or.doi                         %   output_url_or_doi(false);
+  false output.url                                %   output_url(false);
+  false output.doi                                %   output_doi(false);
   end.bibitem                                     %   end_bibitem();
 }                                                 % }
                                                   %
@@ -1799,7 +1800,8 @@ FUNCTION {article} {                              % void Entry::article() {
   false output.number                             %   output_number(false);
   false output.pages                              %   output_pages(false);
   false output.citedate                           %   output_citedate(false);
-  false output.url.or.doi                         %   output_url_or_doi(false);
+  false output.url                                %   output_url(false);
+  false output.doi                                %   output_doi(false);
   end.bibitem                                     %   end_bibitem();
 }                                                 % }
                                                   %
@@ -1816,7 +1818,8 @@ FUNCTION {news} {                                 % void Entry::news() {
   true output.date                                %   output_date(true);
   false output.number                             %   output_number(false);
   false output.citedate                           %   output_citedate(false);
-  false output.url.or.doi                         %   output_url_or_doi(false);
+  false output.url                                %   output_url(false);
+  false output.doi                                %   output_doi(false);
   end.bibitem                                     %   end_bibitem();
 }                                                 % }
                                                   %
@@ -1953,4 +1956,4 @@ EXECUTE {end.bib}                                 %   end_bib();
                                                   % }
                                                   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% End of file `GBT7714-2005.bst'
+%% End of file `GBT7714-2015.bst'

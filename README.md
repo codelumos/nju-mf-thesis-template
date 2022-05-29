@@ -20,11 +20,9 @@
 |njuthesis.cfg | 模板配置文件|
 |njulogo.eps | 南京大学校徽图片|
 |njuname.eps | 南京大学校名图片|
-|gbt7714-2005.bst | 符合国标 GB/T 7714-2005 的参考文献样式文件|
+|gbt7714-2015.bst | 符合国标 GB/T 7714-2015 的参考文献样式文件|
 |figure/ | 示例文档图片目录|
 
 ## 参考文献格式说明
 
 严格遵循中国国家标准[《GB/T 7714-2015：信息与文献 参考文献著录规则》](https://github.com/codelumos/nju-mf-thesis-template/blob/main/%E3%80%90GB_T%207714-2015%E3%80%91%E4%BF%A1%E6%81%AF%E4%B8%8E%E6%96%87%E7%8C%AE%20%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E8%91%97%E5%BD%95%E8%A7%84%E5%88%99.pdf)
-
-详细信息见该项目：[GBT7714-2005-BibTeX-Style](https://github.com/Haixing-Hu/GBT7714-2005-BibTeX-Style)
