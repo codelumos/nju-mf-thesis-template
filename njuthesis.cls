@@ -1,7 +1,7 @@
 %% 模板类文件
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{njuthesis.cls}
- [2022/5/27 v1.1.19 Document Class for the Degree Thesis of Nanjing University]
+ [2022/5/29 v1.2 Document Class for the Master Thesis of Nanjing University]
 \newif\ifnjut@adobefonts\njut@adobefontstrue
 \newif\ifnjut@winfonts\njut@winfontsfalse
 \newif\ifnjut@linuxfonts\njut@linuxfontsfalse

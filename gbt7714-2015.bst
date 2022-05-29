@@ -1,10 +1,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%  符合 GB/T 7714-2005 规范的 BibTeX 样式文件
+%  符合 GB/T 7714-2015 规范的 BibTeX 样式文件
 %  版本: v2.2 2022年5月29日
 %
 %  参考资料：
-%  [1] 中国国家标准化管理委员会. GB_T 7714-2015 信息与文献 参考文献著录规则[S]. 2015.
+%  [1] 中国国家标准化管理委员会. GB/T 7714-2015 信息与文献 参考文献著录规则[S]. 2015.
 %  [2] 胡海星. GBT7714-2005-BibTeX-Style[EB/OL]. (2018-10-09)[2022-05-29]. https://github.com/Haixing-Hu/GBT7714-2005-BibTeX-Style.
 %
 %    This program is free software; you can redistribute it and/or modify
@@ -482,7 +482,7 @@ FUNCTION {end.bibitem} {                          % void Entry::end_bibitem() {
                                                   %
 FUNCTION {is.in.chinese} {                        % int Entry::is_in_chinese() {
   language empty$ {                               %   if (empty(this.language)) {
-    false                                         %     return false;
+    true                                          %     return true;
   } {                                             %   } else {
     language "zh" = {                             %     if (this.language == "zh") {
       true                                        %       return true;
@@ -1365,7 +1365,8 @@ FUNCTION {output.doi} {                           % void Entry::output_doi(int r
   'required :=                                    %   this.required = required;
   doi empty$ not {                                %     if (! empty(this.doi)) {
     cap.period write$                             %       write(cap_period);
-    cap.doi doi write$                            %       write(cap_doi_url + this.doi);
+    cap.doi write$                                %       write(cap_doi);
+    doi write$                                    %       write(this.doi);
   } {                                             %     } else {
     required {                                    %       if (required == 1) {
       "Require DOI: " cite$ * warning$            %         warning("Require DOI: " + this.cite);
