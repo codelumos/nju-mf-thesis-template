@@ -4,24 +4,23 @@
 
 ## 使用说明
 
-* 推荐使用[南京大学在线 LaTeX](https://tex.nju.edu.cn/)直接导入该模板进行写作。
-* 默认Windows系统下，**安装[CTeX](http://www.ctex.org/CTeXDownload/)完整版**。Mac、Linux操作系统需按照Thesis.tex中的注释说明，修改字体等参数。已给出样例Thesis.tex，编辑修改该文件即可。
-* **必须使用XeLaTeX**。建议使用TeXworks编辑，选择**XeLaTeX+MakeIndex+BibTex**编译运行。WinEdt需要使用**UTF-8**编码打开.tex文件，并且使用XeLaTeX编译。
-* 参数twoside/oneside指定排版的文档为双面/单面格式，如果论文双面打印，则建议用twoside（twoside会使得chapter章节从奇数页开始，即纸张的正面开始，因此会出现一些空白的页面）。
-* 使用bibtex文献管理，用编辑器编辑Thesis.bib文件即可，或使用[JabRef](https://www.jabref.org/)打开。
+* 推荐使用 [南京大学在线 LaTeX](https://tex.nju.edu.cn/)（[Overleaf](https://www.overleaf.com/)）直接导入该模板进行写作。
+* **必须使用XeLaTeX**。本地推荐安装[MiKTeX](https://miktex.org/)，使用TeXworks编辑，选择**XeLaTeX+MakeIndex+BibTex**编译运行。WinEdt需要使用**UTF-8**编码打开.tex文件，并且使用XeLaTeX编译。
+* 使用BibTeX文献管理，用编辑器编辑Thesis.bib文件即可，或使用[JabRef](https://www.jabref.org/)打开。
+* 已给出示例文档Thesis.tex，编辑修改该文件即可。默认在Windows系统下使用，若在Mac、Linux操作系统下，需按照Thesis.tex中的注释说明修改参数。
 
 ## 文件说明
 
-|文件/目录|说明|
-|-|-|
-|Thesis.tex | 示例文档，可作为学位论文的基本模板|
-|Thesis.bib | 示例文档的参考文献数据库|
-|njuthesis.cls | 模板类文件|
-|njuthesis.cfg | 模板配置文件|
-|njulogo.eps | 南京大学校徽图片|
-|njuname.eps | 南京大学校名图片|
-|gbt7714-2015.bst | 符合国标 GB/T 7714-2015 的参考文献样式文件|
-|figure/ | 示例文档图片目录|
+| 文件/目录 | 说明 |
+| --- | --- |
+| Thesis.tex | 示例文档，可作为学位论文的基本模板 |
+| Thesis.bib | 示例文档的参考文献数据库 |
+| njuthesis.cls | 模板类文件 |
+| njuthesis.cfg | 模板配置文件 |
+| njulogo.eps | 南京大学校徽图片 |
+| njuname.eps | 南京大学校名图片 |
+| gbt7714-2015.bst | 符合国标 GB/T 7714-2015 的参考文献样式文件 |
+| figure/ | 示例文档图片目录 |
 
 ## 参考文献格式说明
 
