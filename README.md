@@ -1,6 +1,6 @@
 # nju-thesis-latex-template
 
-　　本项目提供了一个用于排版南京大学专业硕士学位论文的LaTeX模板。该模板基于[njuHan的模板](https://github.com/njuHan/njuthesis-nju-thesis-template)修改，修复了若干Bug，增加和优化了一些功能细节。
+　　本项目提供了一个用于排版南京大学学位论文的LaTeX模板。该模板基于[njuHan的模板](https://github.com/njuHan/njuthesis-nju-thesis-template)修改，修复了若干Bug，增加和优化了一些功能细节。
 
 ## 使用说明
 

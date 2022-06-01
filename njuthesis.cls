@@ -8,7 +8,8 @@
 \newif\ifnjut@macfonts\njut@macfontsfalse
 \newif\ifnjut@backinfo\njut@backinfotrue
 \newif\ifnjut@phd\njut@phdfalse
-\newif\ifnjut@master\njut@masterfalse
+\newif\ifnjut@mg\njut@mgfalse
+\newif\ifnjut@mf\njut@mffalse
 \newif\ifnjut@bachelor\njut@bachelorfalse
 \DeclareOption{adobefonts}{\njut@adobefontstrue
   \njut@winfontsfalse
@@ -28,14 +29,21 @@
   \njut@linuxfontsfalse}
 \DeclareOption{nobackinfo}{\njut@backinfofalse}
 \DeclareOption{phd}{\njut@phdtrue
-  \njut@masterfalse
+  \njut@mgfalse
+  \njut@mffalse
   \njut@bachelorfalse}
-\DeclareOption{master}{\njut@mastertrue
+\DeclareOption{mg}{\njut@mgtrue
   \njut@phdfalse
+  \njut@mffalse
+  \njut@bachelorfalse}
+\DeclareOption{mf}{\njut@mftrue
+  \njut@phdfalse
+  \njut@mgfalse
   \njut@bachelorfalse}
 \DeclareOption{bachelor}{\njut@bachelortrue
   \njut@phdfalse
-  \njut@masterfalse}
+  \njut@mgfalse
+  \njut@mffalse}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
 \LoadClass[12pt,a4paper,doubleside]{book}
@@ -829,7 +837,7 @@
       & \njutunderline[310pt]{\njut@value@title}\\
       \bfseries\makebox[7em][s]{\njut@cap@cover@author}
       & \njutunderline[310pt]{\njut@value@author}\\
-      \bfseries\makebox[7em][s]{\scalebox{0.72}[1]{\njut@cap@cover@major}}
+      \bfseries\makebox[7em][s]{\njut@cap@cover@major}
       & \njutunderline[310pt]{\njut@value@major}\\
       \bfseries\makebox[7em][s]{\njut@cap@cover@researchfield}
       & \njutunderline[310pt]{\njut@value@researchfield}\\
@@ -845,7 +853,7 @@
       & \njutunderline[310pt]{\njut@value@titleb}\\
       \bfseries\makebox[7em][s]{\njut@cap@cover@author}
       & \njutunderline[310pt]{\njut@value@author}\\
-      \bfseries\makebox[7em][s]{\scalebox{0.72}[1]{\njut@cap@cover@major}}
+      \bfseries\makebox[7em][s]{\njut@cap@cover@major}
       & \njutunderline[310pt]{\njut@value@major}\\
       \bfseries\makebox[7em][s]{\njut@cap@cover@researchfield}
       & \njutunderline[310pt]{\njut@value@researchfield}\\
@@ -1056,13 +1064,13 @@
   & \multicolumn{3}{l}{
     \begin{tabular*}{5.6cm}{p{3.8cm}p{2.8cm}}
        {{\zihao{4}$\Square$}}%
-       \njut@cap@license@categorymaster
+       \njut@cap@license@categoryacademicmaster
       & {\zihao{4}$\Square$}%
-       \njut@cap@license@categorymasterspec \\
+       \njut@cap@license@categoryprofessionalmaster \\
        {{\zihao{4}$\Square$}}%
-       \njut@cap@license@categoryphd
+       \njut@cap@license@categoryacademicphd
       & {\zihao{4}$\Square$}%
-       \njut@cap@license@categoryphdspec \\
+       \njut@cap@license@categoryprofessionalphd \\
 	  & 
     \end{tabular*}}
   & \multicolumn{2}{r|}{%
