@@ -1,7 +1,7 @@
 %% 模板类文件
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{njuthesis.cls}
- [2022/5/29 v1.2 Document Class for the Master Thesis of Nanjing University]
+ [2022/6/4 v1.2.1 Document Class for Thesis of Nanjing University]
 \newif\ifnjut@adobefonts\njut@adobefontstrue
 \newif\ifnjut@winfonts\njut@winfontsfalse
 \newif\ifnjut@linuxfonts\njut@linuxfontsfalse
@@ -757,6 +757,8 @@
   \renewcommand{\njut@value@submitdate}{#1}}
 \newcommand*{\defenddate}[1]{%
   \renewcommand{\njut@value@defenddate}{#1}}
+\newcommand*{\conferdate}[1]{%
+  \renewcommand{\njut@value@conferdate}{#1}}
 \renewcommand*{\date}[1]{%
   \renewcommand{\njut@value@date}{#1}}
 \newcommand*{\englishtitle}[1]{%
@@ -820,7 +822,8 @@
     \njutunderline[8em]{\njut@value@submitdate}%
     \njut@cap@nlc@defenddate%
     \njutunderline[134pt]{\njut@value@defenddate}\par
-    \noindent\njut@cap@nlc@institute\njutunderline[290pt]{}\par
+    \noindent\njut@cap@nlc@institute%
+    \njutunderline[290pt]{\hspace{2em} {\bfseries\njut@cap@cover@institute} \hspace{4em} \njut@value@conferdate}\par
     \noindent\hfill\njut@cap@nlc@chairman%
     \njutunderline[9em]{\njut@value@nlc@chairman}\par
     \noindent\hfill\njut@cap@nlc@reviwer%
@@ -828,36 +831,39 @@
     \noindent\hfill\njutunderline[9em]{\njut@value@nlc@reviewerb}\par
     \noindent\hfill\njutunderline[9em]{\njut@value@nlc@reviewerc}\par
     \noindent\hfill\njutunderline[9em]{\njut@value@nlc@reviewerd}\par
+    \begin{center}
+      \njut@value@date
+    \end{center}
   }
   \cleardoublepage
 }
 \newcommand*{\njut@covertable@onelinetitle}{
-  \begin{tabular}{p{7.3em}c}
-      \bfseries\makebox[7em][s]{\njut@cap@cover@title}
+  \begin{tabular}{p{6.5em}c}
+      \bfseries\makebox[6em][s]{\njut@cap@cover@title}
       & \njutunderline[310pt]{\njut@value@title}\\
-      \bfseries\makebox[7em][s]{\njut@cap@cover@author}
+      \bfseries\makebox[6em][s]{\njut@cap@cover@author}
       & \njutunderline[310pt]{\njut@value@author}\\
-      \bfseries\makebox[7em][s]{\njut@cap@cover@major}
+      \bfseries\makebox[6em][s]{\njut@cap@cover@major}
       & \njutunderline[310pt]{\njut@value@major}\\
-      \bfseries\makebox[7em][s]{\njut@cap@cover@researchfield}
+      \bfseries\makebox[6em][s]{\njut@cap@cover@researchfield}
       & \njutunderline[310pt]{\njut@value@researchfield}\\
-      \bfseries\makebox[7em][s]{\njut@cap@cover@supervisor}
+      \bfseries\makebox[6em][s]{\njut@cap@cover@supervisor}
       & \njutunderline[310pt]{\njut@value@supervisor}\\
   \end{tabular}
 }
 \newcommand*{\njut@covertable@twolinetitle}{
-  \begin{tabular}{p{7.3em}c}
-      \bfseries\makebox[7em][s]{\njut@cap@cover@title}
+  \begin{tabular}{p{6.5em}c}
+      \bfseries\makebox[6em][s]{\njut@cap@cover@title}
       & \njutunderline[310pt]{\njut@value@titlea}\\
-      \bfseries\makebox[7em][s]{}
+      \bfseries\makebox[6em][s]{}
       & \njutunderline[310pt]{\njut@value@titleb}\\
-      \bfseries\makebox[7em][s]{\njut@cap@cover@author}
+      \bfseries\makebox[6em][s]{\njut@cap@cover@author}
       & \njutunderline[310pt]{\njut@value@author}\\
-      \bfseries\makebox[7em][s]{\njut@cap@cover@major}
+      \bfseries\makebox[6em][s]{\njut@cap@cover@major}
       & \njutunderline[310pt]{\njut@value@major}\\
-      \bfseries\makebox[7em][s]{\njut@cap@cover@researchfield}
+      \bfseries\makebox[6em][s]{\njut@cap@cover@researchfield}
       & \njutunderline[310pt]{\njut@value@researchfield}\\
-      \bfseries\makebox[7em][s]{\njut@cap@cover@supervisor}
+      \bfseries\makebox[6em][s]{\njut@cap@cover@supervisor}
       & \njutunderline[310pt]{\njut@value@supervisor}\\
   \end{tabular}
 }
