@@ -1,7 +1,7 @@
 %% 模板类文件
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{njuthesis.cls}
- [2022/6/4 v1.2.1 Document Class for Thesis of Nanjing University]
+ [2022/06/05 v1.3 Document Class for Thesis of Nanjing University]
 \newif\ifnjut@adobefonts\njut@adobefontstrue
 \newif\ifnjut@winfonts\njut@winfontsfalse
 \newif\ifnjut@linuxfonts\njut@linuxfontsfalse
@@ -743,8 +743,6 @@
   \renewcommand{\njut@value@graduateyear}{#1}}
 \newcommand*{\supervisor}[1]{%
   \renewcommand{\njut@value@supervisor}{#1}}
-\newcommand*{\supervisortelphone}[1]{%
-  \renewcommand{\njut@value@supervisortelphone}{#1}}
 \newcommand*{\major}[1]{%
   \renewcommand{\njut@value@major}{#1}}
 \newcommand*{\researchfield}[1]{%
@@ -823,7 +821,9 @@
     \njut@cap@nlc@defenddate%
     \njutunderline[134pt]{\njut@value@defenddate}\par
     \noindent\njut@cap@nlc@institute%
-    \njutunderline[290pt]{\hspace{2em} {\bfseries\njut@cap@cover@institute} \hspace{4em} \njut@value@conferdate}\par
+    \njutunderline[290pt]{%
+      \hspace{2em} \makebox[5em][s]{\bfseries\njut@cap@cover@institute}%
+      \hspace{3.5em} \njut@value@conferdate}\par
     \noindent\hfill\njut@cap@nlc@chairman%
     \njutunderline[9em]{\njut@value@nlc@chairman}\par
     \noindent\hfill\njut@cap@nlc@reviwer%
@@ -878,7 +878,7 @@
     \vskip 3cm
     {\bf\kaishu\zihao{1}\makebox[10em][s]{\njut@cap@cover@thesis}}\\
     \vskip 5mm
-    {\bf\kaishu\zihao{1}（\makebox[9em][s]{\njut@cap@cover@apply}）}\\
+    {\bf\kaishu\zihao{1}\njut@cap@cover@apply}\\
     \vskip\stretch{1}
     {\bgroup
     \kaishu\zihao{3} % 中文封面字号
@@ -1134,7 +1134,6 @@
 \email{}
 \studentnum{}
 \supervisor{}
-\supervisortelphone{}
 \major{}
 \researchfield{}
 \englishauthor{}
@@ -1156,7 +1155,7 @@
     \vskip 8mm
     {\bf\kaishu\zihao{1}\makebox[10em][s]{\njut@cap@cover@thesis}}\\
     \vskip 5mm
-    {\bf\kaishu\zihao{1}（\makebox[9em][s]{\njut@cap@cover@apply}）}\\
+    {\bf\kaishu\zihao{1}\njut@cap@cover@apply}\\
     \vskip\stretch{1}
     {\bgroup
     \bfseries\kaishu\zihao{3} % 中文封面字号

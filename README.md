@@ -1,13 +1,13 @@
 # nju-thesis-latex-template
 
-　　本项目提供了一个用于排版南京大学学位论文的LaTeX模板。该模板基于[njuHan的模板](https://github.com/njuHan/njuthesis-nju-thesis-template)修改，修复了若干Bug，增加和优化了一些功能细节。
+　　[本项目](https://github.com/codelumos/nju-thesis-latex-template)提供了一个用于排版南京大学学位论文的 LaTeX 模板。该模板基于 [njuHan 的模板](https://github.com/njuHan/njuthesis-nju-thesis-template) 修改，修复了若干 Bug，增加和优化了一些功能细节。
 
 ## 使用说明
 
-* 已给出示例文档Thesis.tex，编辑修改该文件即可。默认在Windows系统下使用，若在Mac、Linux操作系统下，需按照Thesis.tex中的注释说明修改参数。
-* **必须使用XeLaTeX**。推荐使用 [南京大学在线 LaTeX](https://tex.nju.edu.cn/)（[Overleaf](https://www.overleaf.com/)）直接导入该模板进行写作。
-* 本地推荐安装[MiKTeX](https://miktex.org/)，使用TeXworks编辑，选择**XeLaTeX+MakeIndex+BibTex**编译运行。WinEdt需要使用**UTF-8**编码打开.tex文件，并且使用XeLaTeX编译。
-* 使用BibTeX文献管理，用编辑器编辑Thesis.bib文件即可，或使用[JabRef](https://www.jabref.org/)打开。
+* 已给出示例文档 Thesis.tex，编辑修改该文件即可。默认在 Windows 系统下使用，若在 Mac、Linux 操作系统下，需按照 Thesis.tex 中的注释说明修改参数。
+* **必须使用 XeLaTeX**。推荐使用 [南京大学在线 LaTeX](https://tex.nju.edu.cn/)（[Overleaf](https://www.overleaf.com/)）直接导入该模板进行写作。
+* 本地推荐安装 [MiKTeX](https://miktex.org/)，使用 TeXworks 编辑，选择 **XeLaTeX+MakeIndex+BibTex** 编译运行。WinEdt 需要使用 **UTF-8** 编码打开 .tex 文件，并且使用 XeLaTeX 编译。
+* 使用 BibTeX 文献管理，用编辑器编辑 Thesis.bib 文件即可，或使用 [JabRef](https://www.jabref.org/) 打开。
 
 ## 文件说明
 
